@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Launch (lldb)",
+            "program": "${workspaceFolder}/build/main",
+            "args": [],
+            "console": "externalTerminal",
+            "preLaunchTask": "build debug",
+            "cwd": "${workspaceFolder}/resources",
+            "env": {
+                "TERM": "xterm",
+            },
+            "expressions": "native",
+        },
+    ]
+}

@@ -1,0 +1,139 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build debug",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "--build",
+                "build",
+                "--config Debug"
+            ],
+            "detail": "Build the Debug config of the project",
+            "icon": {
+                "color": "terminal.ansiRed",
+                "id": "tools",
+            },
+            "presentation": {
+                "revealProblems": "onProblem",
+                "reveal": "silent",
+                "close": false,
+                "clear": true,
+                "group": "build"
+            },
+            "group": {
+                "kind": "build"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "build release",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "--build",
+                "build",
+                "--config Release"
+            ],
+            "detail": "Build the Release config of the project",
+            "icon": {
+                "color": "terminal.ansiBlue",
+                "id": "tools",
+            },
+            "presentation": {
+                "revealProblems": "onProblem",
+                "reveal": "silent",
+                "close": false,
+                "clear": true,
+                "group": "build"
+            },
+            "group": {
+                "kind": "build"
+            }
+        },
+        {
+            "label": "Run debug build",
+            "type": "shell",
+            "icon": {
+                "color": "terminal.ansiGreen",
+                "id": "debug-alt"
+            },
+            "command": "alacritty",
+            "args": [
+                "--working-directory",
+                "$PWD/resources",
+                "-e",
+                "bash",
+                "-c",
+                "\"'${workspaceFolder}/build/main';read -n 1 -s -r -p '\nPress any key to exit...'\""
+            ],
+            "dependsOn": [
+                "build debug"
+            ],
+            "presentation": {
+                "revealProblems": "onProblem",
+                "reveal": "silent",
+                "close": false,
+                "clear": true
+            },
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Run release build",
+            "type": "shell",
+            "icon": {
+                "color": "terminal.ansiGreen",
+                "id": "run"
+            },
+            "command": "alacritty",
+            "args": [
+                "--working-directory",
+                "$PWD/resources",
+                "-e",
+                "bash",
+                "-c",
+                "\"'${workspaceFolder}/build/main';read -n 1 -s -r -p '\nPress any key to exit...'\""
+            ],
+            "dependsOn": [
+                "build release"
+            ],
+            "presentation": {
+                "revealProblems": "onProblem",
+                "reveal": "silent",
+                "close": false,
+                "clear": true
+            },
+            "group": {
+                "kind": "test",
+                "isDefault": false
+            }
+        },
+        {
+            "type": "cmake",
+            "label": "CMake: configure",
+            "command": "configure",
+            "icon": {
+                "color": "terminal.ansiYellow",
+                "id": "settings-gear"
+            },
+            "problemMatcher": [],
+            "runOptions": {
+                "runOn": "folderOpen"
+            },
+            "detail": "CMake template configure task",
+            "presentation": {
+                "revealProblems": "onProblem",
+                "reveal": "silent",
+                "close": false,
+                "clear": true
+            },
+            "group": {
+                "kind": "build"
+            }
+        },
+    ]
+}
