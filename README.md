@@ -1,7 +1,7 @@
 # CMake Project Template
 CMake project template for Vscode with multiple file builds, debugging support and external terminal runs for C++.
 ### Note
-This has currently only been tested of Linux. MacOS might be supported out of the box with a few tweaks but Windows support is most likely not there. Would love to accept PRs for that.
+This has currently only been tested for Linux. MacOS might be supported out of the box with a few tweaks but Windows support is most likely not there. Would love to accept PRs for that.
 ## Dependencies
 - Visual Studio Code
 - CMake (>= 3.26)
