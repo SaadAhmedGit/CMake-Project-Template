@@ -16,7 +16,7 @@ This has currently only been tested for Linux. MacOS might be supported out of t
 ```bash
 git clone https://github.com/SaadAhmedGit/CMake-Project-Template/
 cd CMake-Project-Template
-code
+code .
 ```
   2. Install this vscode settings profile available [here](https://vscode.dev/profile/github/6e9a3a76efe906fd0bac651148779973) for all the extensions and settings.
   3. Open `src/main.cpp` and press `Ctrl+Alt+N` to execute the program.
